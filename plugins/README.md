@@ -4,4 +4,6 @@
 
 flutter create --template=package --platforms=android,ios some_package
 
+在 package 里，添加 example
 
+flutter create example --platforms=android,ios

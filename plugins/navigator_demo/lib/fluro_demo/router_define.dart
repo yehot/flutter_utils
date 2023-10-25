@@ -18,6 +18,22 @@ class Routes {
   static String login = "/page_2";
 
   static void configureRoutes(FluroRouter router) {
+
+    router.define(home,
+      handler: Handler(handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
+        return const SomePage();
+      }),
+      // 可以自定义转场
+      transitionBuilder: (BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation, Widget child) {
+        return child;
+      },
+      // 可以单独指定 转场的动画类型、时长
+      // TransitionType? transitionType,
+      // Duration transitionDuration = defaultTransitionDuration,
+    );
+
+
+
     router.define(home, handler: Handler(
       handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
         return const SomePage();
