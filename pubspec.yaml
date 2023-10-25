@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-
+  logger: 2.0.2
   dart_grammar:
     path: plugins/dart_grammar
   usage_demo:
@@ -22,3 +22,4 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
+  uses-material-design: true
