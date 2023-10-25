@@ -16,21 +16,15 @@ class MyApp extends StatelessWidget {
   Widget routeType2() {
 
     var route1 = MaterialPageRoute(builder: (_)=> const NewsPage());
-    var route2 = MaterialPageRoute(builder: (_)=> const NewsPage(),
-      settings: const RouteSettings(name: "/news_page",
-        arguments: { "title":"新闻"}
-      )
-    );
-
     // onGenerateRoute 的类型是一个传入 setting 返回 Route 的 function
     // typedef RouteFactory = Route<dynamic>? Function(RouteSettings settings);
-    RouteFactory generator = (RouteSettings settings) {
-      return route1;
-    };
 
     return MaterialApp(
       home: const MyHomePage(),
-      onGenerateRoute: generator,
+      // RouteFactory 类型
+      onGenerateRoute: (RouteSettings settings) {
+        return route1;
+      },
     );
   }
 

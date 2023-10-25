@@ -25,12 +25,20 @@ class _MyHomePageState extends State<MyHomePage> {
     var route = MaterialPageRoute(builder: (ctx) {
       return const NewsPage();
     });
+
+    // 基类 Route 有 RouteSettings 参数
+    var route2 = MaterialPageRoute(builder: (_)=> const NewsPage(),
+      settings: const RouteSettings(name: "/news_page",
+        arguments: { "title":"新闻"}
+      )
+    );
+
     Navigator.of(context).push(route);
 
     // 命名路由
     Navigator.pushNamed(context, 'news_page');
 
-    // Navigator.pop(context);
+    Navigator.pop(context);
   }
 
 }

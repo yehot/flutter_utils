@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 late App app;
 
-class App {
+abstract class App {
   static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
   BuildContext get context => navigatorKey.currentContext!;
@@ -14,4 +14,12 @@ class App {
   void init() {
     app = this;
   }
+}
+
+class Application extends App {
+  // @override
+  // void init() {
+  //   super.init();
+  //
+  // }
 }
