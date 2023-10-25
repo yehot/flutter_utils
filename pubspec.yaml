@@ -16,6 +16,7 @@ dependencies:
     path: plugins/dart_grammar
   usage_demo:
     path: plugins/usage_demo
+  modal_bottom_sheet: 2.1.2
 
 dev_dependencies:
   flutter_test:
