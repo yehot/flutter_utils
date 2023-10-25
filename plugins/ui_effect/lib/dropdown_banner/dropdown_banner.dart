@@ -7,6 +7,14 @@ const String _kBannerChannel = 'createDropdownBanner';
 
 typedef void _IntCallback(int id);
 
+// 实现逻辑：
+// 1. 首先在 Material App 的 home 的 root 节点包 Banner 容器 (才能保证任何页面都能 show 出来)
+// 2. 用 notification center 发通知，保证任何页面都能调用 show 方法
+// 3. 在 Banner Widget 放一个 Stack 放 child（app 的 root widget）
+//  stack 上叠加 一个一个的 小 banner，show 时，设置定时器自动消失并 dispose；
+//    用 AnimatedPositioned 设置出现的动画，
+//    多个层叠的 banner 覆盖动画，直接是 stack 上的重叠，再加 show、hide 定时器就自动实现了
+
 /// DropdownBanner manages the creation and animation of banner elements
 /// that are useful for displaying warnings and updates to users.
 class DropdownBanner extends StatefulWidget {
