@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:module_mine/generated/l10n.dart';
 
 class MinePage extends StatelessWidget {
   const MinePage({super.key});
@@ -8,9 +9,9 @@ class MinePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey,
-        title: Text("我的"),
+        title: Text(MINE.of(context).mine_title),
       ),
-      body: Text("我的"),
+      body: Text(MINE.of(context).mine_title),
     );
   }
 }

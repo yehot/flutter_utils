@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:library_core/library_core.dart';
+import 'package:module_home/generated/l10n.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,9 +10,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text("首页"),
+        title: Text(HOME.of(context).home_title),
       ),
-      body: Text("首页"),
+      body: Text(HOME.of(context).home_title),
     );
   }
 

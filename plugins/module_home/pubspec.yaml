@@ -16,7 +16,24 @@ dev_dependencies:
     sdk: flutter
   library_core:
     path: ../library_core
-
+  # 多语言
+  # 国际化 (i18n) 和本地化 (l10n)
+  intl: ^0.18.1
 
 # The following section is specific to Flutter packages.
 flutter:
+
+
+flutter_intl:
+  enabled: true
+  # 可选。设置生成的本地化类的名称。默认值：S
+  class_name: HOME
+  # 可选。设置用于生成本地化文件的主要区域设置。提供的值应包含以下划线分隔的语言代码和可选脚本和国家/地区代码（例如“en”、“en_GB”、“zh_Hans”、“zh_Hans_CN”）。默认值：en
+  main_locale: zh_CN
+  # 可选。设置 ARB 资源文件的目录。提供的值应该是系统上的有效路径。默认值：lib/l10n
+  arb_dir: lib/l10n_arb
+  # 可选。设置生成的本地化文件的目录。提供的值应该是系统上的有效路径。默认值：lib/gen
+  output_dir: lib/generated
+
+#flutter_gen:
+#  output: lib/generated/ # Optional (default: lib/gen/)
