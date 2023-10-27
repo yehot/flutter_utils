@@ -14,9 +14,15 @@ dependencies:
   logger: 2.0.2
   dart_grammar:
     path: plugins/dart_grammar
-  usage_demo:
-    path: plugins/usage_demo
+#  usage_demo:
+#    path: plugins/usage_demo
   modal_bottom_sheet: 2.1.2
+  library_core:
+    path: plugins/library_core
+  module_home:
+    path: plugins/module_home
+  module_mine:
+    path: plugins/module_mine
 
 dev_dependencies:
   flutter_test:

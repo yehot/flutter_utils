@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_utils/home/home_page.dart';
-import 'package:usage_demo/singleton/app_singleton.dart';
-
+import 'package:library_core/app_base.dart';
 
 
 class MyApp extends StatelessWidget {
