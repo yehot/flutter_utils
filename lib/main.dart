@@ -6,11 +6,11 @@ import 'package:library_core/env/package_env.dart';
 import 'application.dart';
 
 void main() {
-  runZonedGuarded(() {
+  runZonedGuarded(() async {
     WidgetsFlutterBinding.ensureInitialized();
 
     // 类似 iOS 的 AppDelegate，sdk 的初始化、app 配置都在这里
-    Application().init();
+    await Application().init();
 
     if (PackageEnv.isDebug) {
       // 添加调试工具

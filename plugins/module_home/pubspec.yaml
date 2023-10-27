@@ -17,8 +17,7 @@ dev_dependencies:
   library_core:
     path: ../library_core
   # 多语言
-  # 国际化 (i18n) 和本地化 (l10n)
-  intl: ^0.18.1
+  intl: ^0.17.0
 
 # The following section is specific to Flutter packages.
 flutter:

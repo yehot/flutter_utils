@@ -13,5 +13,5 @@ abstract class AppBase with ModuleMixin {
   final RouteObserver<ModalRoute> routeObserver = RouteObserver<ModalRoute>();
 
   @required
-  void init();
+  Future<void> init();
 }
