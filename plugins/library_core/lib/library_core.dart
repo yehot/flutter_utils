@@ -9,3 +9,5 @@ export 'module/app_tab.dart';
 export 'app_base.dart';
 export 'env/env.dart';
 export 'env/package_env.dart';
+
+export 'theme/text_styles.dart';
