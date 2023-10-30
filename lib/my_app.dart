@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_utils/home/home_page.dart';
+import 'package:flutter_utils/main_tab/main_tab_page.dart';
 import 'package:library_core/app_base.dart';
 import 'package:library_core/i18n/i18n_manager.dart';
 
@@ -17,7 +17,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(title: 'Home page'),
+      home: const MainTabPage(),
       navigatorObservers: [app.routeObserver],
       // 多语言配置
       locale: I18nManager.instance.locale,
