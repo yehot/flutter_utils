@@ -10,9 +10,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text(HOME.of(context).home_title),
+        title: Text(S.of(context).home_title),
       ),
-      body: Text(HOME.of(context).home_title),
+      body: Text(S.of(context).home_title),
     );
   }
 

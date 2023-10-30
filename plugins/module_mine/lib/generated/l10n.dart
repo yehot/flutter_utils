@@ -12,42 +12,42 @@ import 'intl/messages_all.dart';
 // ignore_for_file: join_return_with_assignment, prefer_final_in_for_each
 // ignore_for_file: avoid_redundant_argument_values, avoid_escaping_inner_quotes
 
-class MINE {
-  MINE();
+class S {
+  S();
 
-  static MINE? _current;
+  static S? _current;
 
-  static MINE get current {
+  static S get current {
     assert(_current != null,
-        'No instance of MINE was loaded. Try to initialize the MINE delegate before accessing MINE.current.');
+        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
-  static Future<MINE> load(Locale locale) {
+  static Future<S> load(Locale locale) {
     final name = (locale.countryCode?.isEmpty ?? false)
         ? locale.languageCode
         : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
-      final instance = MINE();
-      MINE._current = instance;
+      final instance = S();
+      S._current = instance;
 
       return instance;
     });
   }
 
-  static MINE of(BuildContext context) {
-    final instance = MINE.maybeOf(context);
+  static S of(BuildContext context) {
+    final instance = S.maybeOf(context);
     assert(instance != null,
-        'No instance of MINE present in the widget tree. Did you add MINE.delegate in localizationsDelegates?');
+        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
     return instance!;
   }
 
-  static MINE? maybeOf(BuildContext context) {
-    return Localizations.of<MINE>(context, MINE);
+  static S? maybeOf(BuildContext context) {
+    return Localizations.of<S>(context, S);
   }
 
   /// `我的`
@@ -61,7 +61,7 @@ class MINE {
   }
 }
 
-class AppLocalizationDelegate extends LocalizationsDelegate<MINE> {
+class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
@@ -74,7 +74,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<MINE> {
   @override
   bool isSupported(Locale locale) => _isSupported(locale);
   @override
-  Future<MINE> load(Locale locale) => MINE.load(locale);
+  Future<S> load(Locale locale) => S.load(locale);
   @override
   bool shouldReload(AppLocalizationDelegate old) => false;
 

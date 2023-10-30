@@ -9,9 +9,9 @@ class MinePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey,
-        title: Text(MINE.of(context).mine_title),
+        title: Text(S.of(context).mine_title),
       ),
-      body: Text(MINE.of(context).mine_title),
+      body: Text(S.of(context).mine_title),
     );
   }
 }
