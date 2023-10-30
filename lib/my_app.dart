@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_utils/main_tab/main_tab_page.dart';
 import 'package:library_core/app_base.dart';
 import 'package:library_core/i18n/i18n_manager.dart';
@@ -22,7 +23,12 @@ class _MyAppState extends State<MyApp> {
       // 多语言配置
       locale: I18nManager.instance.locale,
       supportedLocales: I18nManager.instance.supportedLocales,
-      localizationsDelegates: I18nManager.instance.localizationsDelegates,
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        ...I18nManager.instance.localizationsDelegates,
+      ],
       localeResolutionCallback: I18nManager.instance.localResolutionCallback,
     );
   }

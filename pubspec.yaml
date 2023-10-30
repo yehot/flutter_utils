@@ -23,6 +23,8 @@ dependencies:
     path: plugins/module_home
   module_mine:
     path: plugins/module_mine
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
