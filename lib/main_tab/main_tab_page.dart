@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_utils/demo/launch_screen_page.dart';
 import 'package:library_core/app_base.dart';
 import 'package:library_core/module/app_tab.dart';
 import 'app_tab_info.dart';
@@ -21,6 +22,19 @@ class _MainTabPageState extends State<MainTabPage> {
 
   final PageController _pageController = PageController();
   ValueNotifier<int> _selectedIndex = ValueNotifier(0);
+
+  @override
+  void initState() {
+    super.initState();
+
+    _pageController.addListener(() {
+      // if (_selectedIndex.value == 1) {
+      //   Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+      //     return LaunchScreenPage(title: "title");
+      //   }));
+      // }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

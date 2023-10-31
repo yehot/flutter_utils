@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+// import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class HomePage2 extends StatelessWidget {
   const HomePage2({super.key});
@@ -12,12 +12,12 @@ class HomePage2 extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          showCupertinoModalBottomSheet(
-            context: context,
-            builder: (_) {
-              return HomePage2();
-            }
-          );
+          // showCupertinoModalBottomSheet(
+          //   context: context,
+          //   builder: (_) {
+          //     return HomePage2();
+          //   }
+          // );
         },
       ),
     );
