@@ -71,7 +71,9 @@ class I18nManager extends ChangeNotifier {
         // _saveLocale(locale.toLanguageTag());
 
         // reload 所有的 module
-        localizationsDelegates.map((e) async => await e.load(locale));
+        localizationsDelegates.forEach((e) async {
+          await e.load(locale);
+        });
         notifyListeners();
       }
     }

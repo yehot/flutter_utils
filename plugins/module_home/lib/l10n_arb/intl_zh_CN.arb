@@ -1,4 +1,5 @@
 {
   "@@locale": "zh_CN",
-  "home_title": "首页"
+  "home_title": "首页",
+  "home_body": "首页内容"
 }

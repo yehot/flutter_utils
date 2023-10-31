@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:library_core/generated/l10n.dart';
 
 /// 定义 app 主 tab 的 page
 abstract class AppTabPage {
@@ -19,9 +20,10 @@ enum AppTab {
   String get sName {
     switch(this) {
       case AppTab.home:
-        return "首页";
+        // print("------ 切换 tab ${S.current.hashCode}");
+        return S.current.home;
       case AppTab.mine:
-        return "我的";
+        return S.current.mine;
     }
   }
 

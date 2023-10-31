@@ -1,4 +1,5 @@
 {
   "@@locale": "en_US",
-  "home_title": "Home Page"
+  "home_title": "Home Page",
+  "home_body": "Home Body"
 }
