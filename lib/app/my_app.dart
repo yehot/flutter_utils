@@ -3,7 +3,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_utils/main_tab/main_tab_page.dart';
 import 'package:library_core/app_base.dart';
 import 'package:library_core/i18n/i18n_manager.dart';
-
+import 'package:library_core/generated/l10n.dart' as core;
+import 'package:module_home/module_home.dart' as home;
+import 'package:module_mine/module_mine.dart' as mine;
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -15,19 +17,29 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
 
   @override
+  void initState() {
+    super.initState();
+    I18nManager.instance.addListener(() {
+      setState(() {});
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
+    // print("I18nManager.instance.locale = ${I18nManager.instance.locale.languageCode}");
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const MainTabPage(),
+      home: MainTabPage(),
+      navigatorKey: app.globalKey,
       navigatorObservers: [app.routeObserver],
       // 多语言配置
       locale: I18nManager.instance.locale,
       supportedLocales: I18nManager.instance.supportedLocales,
       localizationsDelegates: [
+        ...I18nManager.instance.localizationsDelegates,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
-        ...I18nManager.instance.localizationsDelegates,
       ],
       localeResolutionCallback: I18nManager.instance.localResolutionCallback,
     );

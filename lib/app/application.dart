@@ -1,3 +1,4 @@
+import 'package:library_core/generated/l10n.dart' as core;
 import 'package:library_core/library_core.dart';
 import 'package:module_home/module_home.dart' as home;
 import 'package:module_mine/module_mine.dart' as mine;
@@ -22,10 +23,12 @@ class Application extends AppBase {
     ModuleManager.instance.register<Mine, mine.MineImp>(mine.MineImp());
   }
 
+  // 有任何 package 里新增的独立的多语言文件，需要在这里注册
   void _registerLangModules() {
-    I18nManager.instance.registerModule(home.AppLocalizationDelegate());
-    I18nManager.instance.registerModule(mine.AppLocalizationDelegate());
-
+    // TODO: 目前测试，只有第一个注册的，会生效，其它都会失效
+    I18nManager.instance.registerModule(home.S.delegate);
+    I18nManager.instance.registerModule(core.S.delegate);
+    I18nManager.instance.registerModule(mine.S.delegate);
   }
 
 }
