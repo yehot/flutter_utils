@@ -26,6 +26,7 @@ class Application extends AppBase {
   // 有任何 package 里新增的独立的多语言文件，需要在这里注册
   void _registerLangModules() {
     // TODO: 目前测试，只有第一个注册的，会生效，其它都会失效
+    // 原因： Intl lib 内部实现机制
     I18nManager.instance.registerModule(home.S.delegate);
     I18nManager.instance.registerModule(core.S.delegate);
     I18nManager.instance.registerModule(mine.S.delegate);

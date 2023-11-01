@@ -26,8 +26,9 @@ class _HomePageState extends State<HomePage> {
       ),
       appBar: AppBar(
         backgroundColor: Colors.blueGrey,
-        title: Text(S.of(context).home_title),
-        // title: Text(S.of(app.context).home_title),
+        // title: Text(S.of(context).home_title),
+        // TODO: 必须使用 of 才能保证切换语言时，正确刷新
+        title: Text(S.current.home_title),
       ),
       body: Builder(
         builder: (context) {
