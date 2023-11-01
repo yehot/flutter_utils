@@ -6,6 +6,7 @@ import 'package:library_core/i18n/i18n_manager.dart';
 import 'package:library_core/generated/l10n.dart' as core;
 import 'package:module_home/module_home.dart' as home;
 import 'package:module_mine/module_mine.dart' as mine;
+import 'package:provider/provider.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -19,29 +20,35 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    I18nManager.instance.addListener(() {
-      setState(() {});
-    });
   }
 
   @override
   Widget build(BuildContext context) {
-    // print("I18nManager.instance.locale = ${I18nManager.instance.locale.languageCode}");
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MainTabPage(),
-      navigatorKey: app.globalKey,
-      navigatorObservers: [app.routeObserver],
-      // 多语言配置
-      locale: I18nManager.instance.locale,
-      supportedLocales: I18nManager.instance.supportedLocales,
-      localizationsDelegates: [
-        ...I18nManager.instance.localizationsDelegates,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(value: I18nManager.instance),
       ],
-      localeResolutionCallback: I18nManager.instance.localResolutionCallback,
+      child: Selector<I18nManager, Locale>(
+        selector: (_, v) => v.locale,
+        builder: (_, local, __) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: MainTabPage(),
+            navigatorKey: app.globalKey,
+            navigatorObservers: [app.routeObserver],
+            // 多语言配置
+            locale: local,
+            supportedLocales: I18nManager.instance.supportedLocales,
+            localizationsDelegates: [
+              ...I18nManager.instance.localizationsDelegates,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            localeResolutionCallback: I18nManager.instance.localResolutionCallback,
+          );
+        },
+      ),
     );
   }
 }
