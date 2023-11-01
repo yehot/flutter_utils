@@ -38,7 +38,7 @@ class I18nManager extends ChangeNotifier {
   final List<String> _supportLanguages = <String>[];
 
   // 默认语言
-  Locale _locale = LanguageType.zh.locale;
+  Locale _locale = LanguageType.en.locale;
   Locale get locale => _locale;
 
   // 注册模块
@@ -71,6 +71,7 @@ class I18nManager extends ChangeNotifier {
         // _saveLocale(locale.toLanguageTag());
 
         // reload 所有的 module
+        // TODO: 这里写不写，都没有区别
         localizationsDelegates.forEach((e) async {
           await e.load(locale);
         });
