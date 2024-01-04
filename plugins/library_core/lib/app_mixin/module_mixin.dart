@@ -1,7 +1,4 @@
-import 'package:library_core/module/module.dart';
-import 'package:library_core/module/module_manager.dart';
-import 'package:library_core/modules/home.dart';
-import 'package:library_core/modules/mine.dart';
+import 'package:library_core/library_core.dart';
 
 mixin ModuleMixin {
   T getModule<T extends Module>() => ModuleManager.instance.getModule<T>();
@@ -13,4 +10,5 @@ mixin ModuleMixin {
 
   Home get home => getModule<Home>();
   Mine get mine => getModule<Mine>();
+  Main get main => getModule<Main>();
 }

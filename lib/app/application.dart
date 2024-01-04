@@ -2,6 +2,8 @@ import 'package:library_core/generated/l10n.dart' as core;
 import 'package:library_core/library_core.dart';
 import 'package:module_home/module_home.dart' as home;
 import 'package:module_mine/module_mine.dart' as mine;
+import 'module/main_impl.dart';
+
 
 class Application extends AppBase {
 
@@ -19,6 +21,7 @@ class Application extends AppBase {
   }
 
   void _registerModules() {
+    ModuleManager.instance.register<Main, MainImpl>(MainImpl());
     ModuleManager.instance.register<Home, home.HomeImp>(home.HomeImp());
     ModuleManager.instance.register<Mine, mine.MineImp>(mine.MineImp());
   }

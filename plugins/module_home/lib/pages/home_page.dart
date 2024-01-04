@@ -21,9 +21,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     // print("home- rebuild");
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: testChangeLang,
-      ),
       appBar: AppBar(
         backgroundColor: Colors.blueGrey,
         // title: Text(S.of(context).home_title),
@@ -35,6 +32,23 @@ class _HomePageState extends State<HomePage> {
           // print("---- ${S.of(context).home_title}");
           return Text(S.of(context).home_body);
         }
+      ),
+      bottomNavigationBar: SafeArea(
+        bottom: true,
+        child: GestureDetector(
+          onTap: () {
+            app.main.changeToTab(AppTab.mine);
+          },
+          child: SizedBox(
+            height: 50,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("切换 tab"),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

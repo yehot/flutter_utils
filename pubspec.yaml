@@ -25,7 +25,8 @@ dependencies:
     path: plugins/module_mine
   flutter_localizations:
     sdk: flutter
-  provider: ^6.0.5
+  provider: 6.0.5
+  get: 4.6.5
 
 dev_dependencies:
   flutter_test:
