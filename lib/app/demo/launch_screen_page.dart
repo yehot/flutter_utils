@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:library_core/i18n/i18n_manager.dart';
 // import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'home_page_2.dart';
 
 class LaunchScreenPage extends StatefulWidget {
   const LaunchScreenPage({super.key, required this.title});
