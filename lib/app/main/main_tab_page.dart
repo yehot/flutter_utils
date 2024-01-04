@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_utils/app/demo/launch_screen_page.dart';
+import 'package:get/get.dart';
 import 'package:library_core/app_base.dart';
 import 'package:library_core/module/app_tab.dart';
 import 'app_tab_info.dart';
+import 'main_tab_controller.dart';
 
-
-final _tabInfoList = <AppTabInfo>[
-  AppTabInfo(AppTab.home, app.home.tabPage),
-  AppTabInfo(AppTab.mine, app.mine.tabPage),
-];
 
 
 class MainTabPage extends StatefulWidget {
@@ -20,14 +17,18 @@ class MainTabPage extends StatefulWidget {
 
 class _MainTabPageState extends State<MainTabPage> {
 
-  final PageController _pageController = PageController();
-  ValueNotifier<int> _selectedIndex = ValueNotifier(0);
+  late MainTabController mainTabController;
 
   @override
   void initState() {
     super.initState();
 
-    _pageController.addListener(() {
+    if (Get.isRegistered<MainTabController>()) {
+      mainTabController = Get.find();
+    } else {
+      mainTabController = Get.put(MainTabController());
+    }
+    mainTabController.pageController.addListener(() {
       // if (_selectedIndex.value == 1) {
       //   Navigator.of(context).push(MaterialPageRoute(builder: (_) {
       //     return LaunchScreenPage(title: "title");
@@ -40,29 +41,28 @@ class _MainTabPageState extends State<MainTabPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
-        controller: _pageController,
+        controller: mainTabController.pageController,
         physics: const NeverScrollableScrollPhysics(),
-        children: _tabInfoList.map((pageInfo) => pageInfo.tagPage).toList(),
+        children: tabInfoList.map((pageInfo) => pageInfo.tagPage).toList(),
       ),
       bottomNavigationBar: ValueListenableBuilder(
-        valueListenable: _selectedIndex,
+        valueListenable: mainTabController.currentIndex,
         builder: (_, int value, __) {
           return BottomNavigationBar(
             items: [
               BottomNavigationBarItem(
-                label: _tabInfoList[0].tab.sName,
+                label: tabInfoList[0].tab.sName,
                 icon: Icon(Icons.account_balance),
                 activeIcon: Icon(Icons.account_balance),
               ),
               BottomNavigationBarItem(
-                label: _tabInfoList[1].tab.sName,
+                label: tabInfoList[1].tab.sName,
                 icon: Icon(Icons.people_alt_outlined),
                 activeIcon: Icon(Icons.people_alt_outlined),
               ),
             ],
             onTap: (int index) {
-              _selectedIndex.value = index;
-              _pageController.jumpToPage(index);
+              mainTabController.changeToPage(index);
             },
             currentIndex: value,
           );
