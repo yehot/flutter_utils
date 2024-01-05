@@ -23,7 +23,10 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        // .value 传入一个变量，不能传入一个 构造对象
         ChangeNotifierProvider.value(value: I18nManager.instance),
+        // .create 必须传入一个构造对象，不能传入一个变量
+        // ChangeNotifierProvider(create: (_)=> I18nManager.instance,), // 错误用法
       ],
       child: Selector<I18nManager, Locale>(
         selector: (_, v) => v.locale,
