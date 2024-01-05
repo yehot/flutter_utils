@@ -14,6 +14,7 @@ class MainImpl extends Main {
   @override
   void changeToTab(AppTab tab) {
     // 使用 GetX 可以不依赖 context
+    // 但是依赖链路会变得很分散且没有约束，Provider 会更集中一点，都挂在根节点
     Get.find<MainTabController>().changeToTab(tab);
   }
 

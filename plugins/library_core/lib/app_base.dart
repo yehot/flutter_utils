@@ -4,11 +4,8 @@ import 'app_mixin/module_mixin.dart';
 late AppBase app;
 
 abstract class AppBase with ModuleMixin {
-  static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-
-  BuildContext get context => navigatorKey.currentContext!;
-
-  GlobalKey<NavigatorState> get globalKey => navigatorKey;
+  GlobalKey<NavigatorState> get globalKey;
+  BuildContext get context;
 
   final RouteObserver<ModalRoute> routeObserver = RouteObserver<ModalRoute>();
 

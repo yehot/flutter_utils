@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:library_core/generated/l10n.dart' as core;
 import 'package:library_core/library_core.dart';
 import 'package:module_home/module_home.dart' as home;
@@ -6,6 +7,14 @@ import 'module/main_impl.dart';
 
 
 class Application extends AppBase {
+
+  static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
+  @override
+  BuildContext get context => navigatorKey.currentContext!;
+
+  @override
+  GlobalKey<NavigatorState> get globalKey => navigatorKey;
 
   @override
   Future<void> init() async {
