@@ -3,10 +3,14 @@
 export 'modules/home.dart';
 export 'modules/mine.dart';
 export 'modules/main.dart';
-
+// module
 export 'module/module.dart';
 export 'module/module_manager.dart';
+
+// main
 export 'module/app_tab.dart';
+export 'router/route_delegate.dart';
+export 'router/navigator_observer.dart';
 
 // app 配置
 export 'app_base.dart';

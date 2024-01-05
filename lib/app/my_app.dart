@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_utils/app/main/main_tab_page.dart';
-import 'package:library_core/app_base.dart';
-import 'package:library_core/i18n/i18n_manager.dart';
+import 'package:library_core/library_core.dart';
 import 'package:provider/provider.dart';
+
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -19,6 +19,7 @@ class _MyAppState extends State<MyApp> {
     super.initState();
   }
 
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -31,11 +32,16 @@ class _MyAppState extends State<MyApp> {
       child: Selector<I18nManager, Locale>(
         selector: (_, v) => v.locale,
         builder: (_, local, __) {
-          return MaterialApp(
+          return MaterialApp.router(
+            // home: MainTabPage(),
+            routerDelegate: MyRouterDelegate(
+              home: MainTabPage(),
+              navigatorKey: app.globalKey,
+              observers: <NavigatorObserver>[
+                MyNavigatorObserver(),
+              ],
+            ),
             debugShowCheckedModeBanner: false,
-            home: MainTabPage(),
-            navigatorKey: app.globalKey,
-            navigatorObservers: [app.routeObserver],
             // 多语言配置
             locale: local,
             supportedLocales: I18nManager.instance.supportedLocales,

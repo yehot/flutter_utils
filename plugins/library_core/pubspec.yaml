@@ -15,6 +15,8 @@ dependencies:
     path: ../module_home
   module_mine:
     path: ../module_mine
+  library_log:
+    path: ../library_log
   # 多语言
   intl: ^0.17.0
 

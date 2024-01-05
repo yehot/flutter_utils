@@ -20,7 +20,7 @@ class MainTabController extends GetxController {
   }
 
   void changeToTab(AppTab tab) {
-    Navigator.popUntil(app.context, (route) {
+    app.popUntil((route) {
       return route.settings.name == '/';
     });
 

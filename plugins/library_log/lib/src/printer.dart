@@ -1,5 +1,7 @@
-import 'package:logger/logger.dart' show Logger, PrettyPrinter;
+import 'package:logger/logger.dart';
 
 var logger = Logger(
-  printer: PrettyPrinter(),
+  // printer: PrettyPrinter(),
+  printer: SimplePrinter(),
+  // printer: LogfmtPrinter(),
 );
