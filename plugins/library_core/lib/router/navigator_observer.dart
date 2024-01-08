@@ -14,7 +14,7 @@ class MyNavigatorObserver extends NavigatorObserver {
     super.didPush(route, previousRoute);
     final fromName = previousRoute?.settings.name ?? '';
     final toName = route.settings.name;
-    loggerD('NavigatorObserver--didPush--from:${previousRoute?.settings.name}--to:${route.settings.name}');
+    loggerD('NavigatorObserver--didPush--from:${fromName}--to:${toName}');
   }
 
   @override
