@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:library_core/library_core.dart';
 import 'package:module_home/generated/l10n.dart';
+import 'package:library_ui/library_ui.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -27,12 +28,22 @@ class _HomePageState extends State<HomePage> {
         // TODO: 必须使用 of 才能保证切换语言时，正确刷新
         title: Text(S.current.home_title),
       ),
-      body: Builder(
-        builder: (context) {
-          // print("---- ${S.of(context).home_title}");
-          return Text(S.of(context).home_body);
-        }
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            MyNineWidget3(),
+            SizedBox(height: 50,),
+            MyNineWidget1(),
+          ],
+        ),
       ),
+      // body: Builder(
+      //   builder: (context) {
+      //     // print("---- ${S.of(context).home_title}");
+      //     return Text(S.of(context).home_body);
+      //   }
+      // ),
       bottomNavigationBar: SafeArea(
         bottom: true,
         child: GestureDetector(

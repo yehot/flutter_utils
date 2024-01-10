@@ -11,16 +11,17 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  library_core:
+    path: ../library_core
+  library_ui:
+    path: ../library_ui
+  # 多语言
+  intl: ^0.17.0
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  library_core:
-    path: ../library_core
-  ui_effect:
-    path: ../ui_effect
-  # 多语言
-  intl: ^0.17.0
 
 # The following section is specific to Flutter packages.
 flutter:
