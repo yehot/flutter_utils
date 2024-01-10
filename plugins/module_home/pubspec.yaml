@@ -17,6 +17,8 @@ dev_dependencies:
     sdk: flutter
   library_core:
     path: ../library_core
+  ui_effect:
+    path: ../ui_effect
   # 多语言
   intl: ^0.17.0
 
