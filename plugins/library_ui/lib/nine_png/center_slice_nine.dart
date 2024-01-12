@@ -45,26 +45,29 @@ class MyNineWidget1 extends StatelessWidget {
 
     // return normalText;
 
-    return SizedBox(
-      height: imgHeight,
-      child: const Text.rich(
-        TextSpan(
-          text: "开户成功送",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 12,
-            // fontWeight: 700,
-          ),
-          children: [
-            TextSpan(
-              text: "150 HSK",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 12,
-                fontStyle: FontStyle.italic,
-              ),
+    return Padding(
+      padding: const EdgeInsets.only(top: 2, left: 5, right: 5),
+      child: SizedBox(
+        height: imgHeight,
+        child: const Text.rich(
+          TextSpan(
+            text: "开户成功送",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 12,
+              // fontWeight: 700,
             ),
-          ],
+            children: [
+              TextSpan(
+                text: "150 HSK",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 12,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -79,10 +82,11 @@ class MyNineWidget3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double imgHeight = 28;
+    double imageW = 130;
     return Container(
       constraints: BoxConstraints(
-        maxWidth: 250,
-        minWidth: 130,  // 不能小于图片原始宽！
+        maxWidth: 300,
+        minWidth: imageW,  // 不能小于图片原始宽！
         maxHeight: imgHeight, // 图片高度
       ),
       decoration: const BoxDecoration(
@@ -95,10 +99,7 @@ class MyNineWidget3 extends StatelessWidget {
           scale: 2,
         ),
       ),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 32, right: 8, top: 5),
-        child: test(imgHeight),
-      ),
+      child: test(imgHeight),
     );
   }
 
@@ -116,26 +117,29 @@ class MyNineWidget3 extends StatelessWidget {
       ),
     );
 
-    return SizedBox(
-      height: imgHeight,
-      child: const Text.rich(
-        TextSpan(
-          text: "升级享",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 12,
-            // fontWeight: 700,
-          ),
-          children: [
-            TextSpan(
-              text: "150 HSK",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 12,
-                fontStyle: FontStyle.italic,
-              ),
+    return Padding(
+      padding: const EdgeInsets.only(left: 32, right: 10, top: 6),
+      child: SizedBox(
+        height: imgHeight,
+        child: const Text.rich(
+          TextSpan(
+            text: "升级享升级享",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 12,
+              // fontWeight: 700,
             ),
-          ],
+            children: [
+              TextSpan(
+                text: "150 HSK",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 12,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
