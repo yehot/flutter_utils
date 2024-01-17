@@ -3,6 +3,7 @@ import 'package:library_core/generated/l10n.dart' as core;
 import 'package:library_core/library_core.dart';
 import 'package:module_home/module_home.dart' as home;
 import 'package:module_mine/module_mine.dart' as mine;
+import 'package:module_market/module_market.dart' as market;
 import 'module/main_impl.dart';
 
 
@@ -33,6 +34,7 @@ class Application extends AppBase {
     ModuleManager.instance.register<Main, MainImpl>(MainImpl());
     ModuleManager.instance.register<Home, home.HomeImp>(home.HomeImp());
     ModuleManager.instance.register<Mine, mine.MineImp>(mine.MineImp());
+    ModuleManager.instance.register<Market, market.MarketImpl>(market.MarketImpl());
   }
 
   // 有任何 package 里新增的独立的多语言文件，需要在这里注册

@@ -11,4 +11,5 @@ mixin ModuleMixin {
   Home get home => getModule<Home>();
   Mine get mine => getModule<Mine>();
   Main get main => getModule<Main>();
+  Market get market => getModule<Market>();
 }

@@ -23,6 +23,8 @@ dependencies:
     path: plugins/module_home
   module_mine:
     path: plugins/module_mine
+  module_market:
+    path: plugins/module_market
   flutter_localizations:
     sdk: flutter
   provider: 6.0.5

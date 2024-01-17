@@ -7,6 +7,7 @@ import 'app_tab_info.dart';
 final tabInfoList = <AppTabInfo>[
   AppTabInfo(AppTab.home, app.home.tabPage),
   AppTabInfo(AppTab.mine, app.mine.tabPage),
+  AppTabInfo(AppTab.market, app.market.tabPage),
 ];
 
 class MainTabController extends GetxController {

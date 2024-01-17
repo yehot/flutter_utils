@@ -12,7 +12,8 @@ abstract class AppTabPage {
 
 enum AppTab {
   home(1),
-  mine(2);
+  mine(2),
+  market(3);
 
   final int val;
   const AppTab(this.val);
@@ -24,6 +25,8 @@ enum AppTab {
         return S.current.home;
       case AppTab.mine:
         return S.current.mine;
+      case AppTab.market:
+        return "市场";
     }
   }
 

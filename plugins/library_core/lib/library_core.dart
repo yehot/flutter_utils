@@ -1,11 +1,11 @@
-
+// module
+export 'module/module.dart';
+export 'module/module_manager.dart';
 // 业务模块 interface
 export 'modules/home.dart';
 export 'modules/mine.dart';
 export 'modules/main.dart';
-// module
-export 'module/module.dart';
-export 'module/module_manager.dart';
+export 'modules/market.dart';
 
 // main
 export 'module/app_tab.dart';
