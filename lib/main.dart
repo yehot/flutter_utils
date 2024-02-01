@@ -1,5 +1,6 @@
-import 'package:main_app/main_app.dart';
+// import 'package:main_app/main_app.dart' as app;
+import 'package:web_app/web_app.dart' as web;
 
 void main() {
-  run_app();
+  web.run_app();
 }

@@ -21,6 +21,8 @@ dependencies:
   # packages
   main_app:
     path: package/main_app
+  web_app:
+    path: package/web_app
 
   # plugins
   library_core:
