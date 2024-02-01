@@ -7,7 +7,7 @@ import 'package:module_market/module_market.dart' as market;
 import 'module/main_impl.dart';
 
 
-class Application extends AppBase {
+class Application extends IAppBase {
 
   static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 

@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  wrapper: ^1.0.2
+  dash_painter: ^1.0.2
 
 dev_dependencies:
   flutter_test:
