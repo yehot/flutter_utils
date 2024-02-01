@@ -1,4 +1,4 @@
-import 'package:flutter_utils/app/main/main_tab_controller.dart';
+import 'package:main_app/app/main/main_tab_controller.dart';
 import 'package:get/get.dart';
 import 'package:library_core/module/app_tab.dart';
 import 'package:library_core/modules/main.dart';
