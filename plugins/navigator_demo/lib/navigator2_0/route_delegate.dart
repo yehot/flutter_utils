@@ -15,6 +15,7 @@ class MyRouterDelegate extends RouterDelegate<List<RouteSettings>>
 
   @override
   Widget build(BuildContext context) {
+    // WidgetsApp.router 构造时，内部没有 Navigator 组件，而路由栈的维护需要使用 Navigator 组件。
     return Navigator(
       key: navigatorKey,
       pages: List.of(_pages),

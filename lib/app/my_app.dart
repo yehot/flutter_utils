@@ -19,6 +19,16 @@ class _MyAppState extends State<MyApp> {
     super.initState();
   }
 
+  MyRouterDelegate _routerDelegate = MyRouterDelegate(
+    home: MainTabPage(),
+    navigatorKey: app.globalKey,
+    observers: <NavigatorObserver>[
+      MyNavigatorObserver(),
+    ],
+  );
+  // 设置 home 和 initial Route Path
+  // ..setInitialRoutePath(configuration),
+
 
   @override
   Widget build(BuildContext context) {
@@ -34,13 +44,7 @@ class _MyAppState extends State<MyApp> {
         builder: (_, local, __) {
           return MaterialApp.router(
             // home: MainTabPage(),
-            routerDelegate: MyRouterDelegate(
-              home: MainTabPage(),
-              navigatorKey: app.globalKey,
-              observers: <NavigatorObserver>[
-                MyNavigatorObserver(),
-              ],
-            ),
+            routerDelegate: _routerDelegate,
             debugShowCheckedModeBanner: false,
             // 多语言配置
             locale: local,

@@ -21,6 +21,8 @@ class _BooksAppState extends State<BooksApp> {
     return MaterialApp(
       home: Router(
         routerDelegate: _routerDelegate,
+        // 注: MaterialApp.router 构造会默认提供 RootBackButtonDispatcher，
+        // 需要监听到系统的回退事件，传入 backButtonDispatcher 参数即可：
         backButtonDispatcher: RootBackButtonDispatcher(),
         routeInformationParser: MyRouteParser(),
       ),
@@ -30,7 +32,10 @@ class _BooksAppState extends State<BooksApp> {
   void test1() {
     // 写法3
     var app = MaterialApp.router(
+      // 对于 Router 组件的使用而言，RouterDelegate 是必须的
+      // WidgetsApp.router 构造时，内部没有 Navigator 组件，而路由栈的维护需要使用 Navigator 组件。
       routerDelegate: _routerDelegate,
+      // routerConfig: ,
       routeInformationParser: MyRouteParser(),
       backButtonDispatcher: RootBackButtonDispatcher(),
     );
