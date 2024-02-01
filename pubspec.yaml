@@ -17,6 +17,12 @@ dependencies:
 #  usage_demo:
 #    path: plugins/usage_demo
   modal_bottom_sheet: 2.1.2
+
+  # packages
+  main_app:
+    path: package/main_app
+
+  # plugins
   library_core:
     path: plugins/library_core
   module_home:
