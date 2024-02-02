@@ -7,4 +7,11 @@ abstract class RouteDefine {
   static String login = "login";
   // static String main = "main";
   static String home = "home";
+  static String notFound = "404";
+
+  static String dashboard = "dashboard";
+  static String task = "task";
+  static String notification = "notification";
+  static String profile = "profile";
+  static String settings = "settings";
 }

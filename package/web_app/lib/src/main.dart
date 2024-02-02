@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:web_app/src/define/constants.dart';
 import 'package:web_app/src/route/root.dart';
+import 'package:web_app/src/route/route_define.dart';
 
 
 void run_app() {
@@ -14,12 +15,6 @@ void run_app() {
 
 
 class MyApp extends StatelessWidget {
-  final GoRouter _router = GoRouter(
-    routes: <RouteBase>[rootRoute],
-    onException: (BuildContext ctx,GoRouterState state, GoRouter router){
-      router.go('/404', extra: state.uri.toString());
-    },
-  );
 
   @override
   Widget build(BuildContext context) {
@@ -33,4 +28,14 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+
+  final GoRouter _router = GoRouter(
+    routes: [
+      rootRoute,
+    ],
+    onException: (BuildContext ctx, GoRouterState state, GoRouter router) {
+      router.go(RouteDefine.notFound, extra: state.uri.toString());
+    },
+  );
+
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'app_navigation_rail.dart';
-import 'app_top_bar/app_top_bar.dart';
+import 'views/app_navigation_rail.dart';
+import 'views/app_top_bar/app_top_bar.dart';
 
 // app 页面左侧导航
 class AppNavigation extends StatefulWidget {

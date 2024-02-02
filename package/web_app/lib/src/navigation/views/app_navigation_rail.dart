@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:web_app/src/app/app.dart';
+import 'package:web_app/src/navigation/widget/menu_meta.dart';
+import 'package:web_app/src/route/route_define.dart';
 
 class AppNavigationRail extends StatelessWidget {
   const AppNavigationRail({super.key});
@@ -7,66 +11,45 @@ class AppNavigationRail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // color: Colors.green,
-      width: 150,
+      width: 170,
       child: SideMenu(),
     );
   }
 }
 
+class SideMenu extends StatefulWidget {
+  const SideMenu({super.key});
 
-class SideMenu extends StatelessWidget {
-  const SideMenu({
-    Key? key,
-  }) : super(key: key);
+  @override
+  State<SideMenu> createState() => _SideMenuState();
+}
+
+class _SideMenuState extends State<SideMenu> {
+
+  final List<MenuMeta> deskNavBarMenus = [
+    MenuMeta(label: 'Dashboard', icon: "assets/icons/menu_dashboard.svg", path: RouteDefine.dashboard),
+    MenuMeta(label: 'Task', icon: "assets/icons/menu_task.svg", path: RouteDefine.task),
+    MenuMeta(label: 'Notification', icon: "assets/icons/menu_notification.svg", path: RouteDefine.notification),
+    MenuMeta(label: 'Profile', icon: "assets/icons/menu_profile.svg", path: RouteDefine.profile),
+    MenuMeta(label: 'Settings', icon: "assets/icons/menu_setting.svg", path: RouteDefine.settings),
+  ];
 
   @override
   Widget build(BuildContext context) {
+
     return ListView(
       children: [
         DrawerHeader(
-          child: Image.asset("assets/images/logo.png"),
+          child: FlutterLogo(),
         ),
-        DrawerListTile(
-          title: "Dashboard",
-          svgSrc: "assets/icons/menu_dashboard.svg",
-          press: () {},
-        ),
-        // DrawerListTile(
-        //   title: "Transaction",
-        //   svgSrc: "assets/icons/menu_tran.svg",
-        //   press: () {},
-        // ),
-        DrawerListTile(
-          title: "Task",
-          svgSrc: "assets/icons/menu_task.svg",
-          press: () {},
-        ),
-        // DrawerListTile(
-        //   title: "Documents",
-        //   svgSrc: "assets/icons/menu_doc.svg",
-        //   press: () {},
-        // ),
-        // DrawerListTile(
-        //   title: "Store",
-        //   svgSrc: "assets/icons/menu_store.svg",
-        //   press: () {},
-        // ),
-        DrawerListTile(
-          title: "Notification",
-          svgSrc: "assets/icons/menu_notification.svg",
-          press: () {},
-        ),
-        DrawerListTile(
-          title: "Profile",
-          svgSrc: "assets/icons/menu_profile.svg",
-          press: () {},
-        ),
-        DrawerListTile(
-          title: "Settings",
-          svgSrc: "assets/icons/menu_setting.svg",
-          press: () {},
-        ),
+        ...deskNavBarMenus.map((e) => DrawerListTile(
+          title: e.label,
+          svgSrc: e.icon,
+          press: () {
+            print("----------- ${e.path}");
+            app.push(context, e.path);
+          },
+        )).toList(),
       ],
     );
   }
