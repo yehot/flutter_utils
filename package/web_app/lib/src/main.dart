@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:web_app/src/define/constants.dart';
 import 'package:web_app/src/route/root.dart';
 
 
@@ -26,6 +27,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Admin Panel', // 浏览器 tab 标题
       routerConfig: _router,
       debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: bgColor,
+        canvasColor: secondaryColor,
+      ),
     );
   }
 }
