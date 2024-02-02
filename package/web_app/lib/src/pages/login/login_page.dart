@@ -19,7 +19,7 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 20,),
             ElevatedButton(
               onPressed: (){
-                GoRouter.of(context).go(AppRoutes.main);
+                GoRouter.of(context).go(RouteDefine.home);
               },
               child: Text('点击进入'),
             ),
