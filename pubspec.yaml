@@ -1,7 +1,6 @@
 name: flutter_utils
 description: A new Flutter project.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
+publish_to: 'none'
 version: 1.0.0+1
 
 environment:
@@ -11,12 +10,6 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  logger: 2.0.2
-  dart_grammar:
-    path: plugins/dart_grammar
-#  usage_demo:
-#    path: plugins/usage_demo
-  modal_bottom_sheet: 2.1.2
 
   # packages
   main_app:
@@ -24,19 +17,6 @@ dependencies:
   web_app:
     path: package/web_app
 
-  # plugins
-  library_core:
-    path: plugins/library_core
-  module_home:
-    path: plugins/module_home
-  module_mine:
-    path: plugins/module_mine
-  module_market:
-    path: plugins/module_market
-  flutter_localizations:
-    sdk: flutter
-  provider: 6.0.5
-  get: 4.6.5
 
 dev_dependencies:
   flutter_test:
