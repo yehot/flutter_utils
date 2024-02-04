@@ -26,11 +26,8 @@ Map<String, String> kRouteLabelMap = {
 
 
 String calcRouteName(BuildContext context, String path) {
-  return path;
   String? result = kRouteLabelMap[path];
   if (result != null) return result;
-  // if (path.startsWith('/sort/player/')){
-  //   return path.split('/sort/player/')[1];
-  // }
+  return path;
   return '未知路由';
 }

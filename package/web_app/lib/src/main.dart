@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:web_app/src/app/app.dart';
 import 'package:web_app/src/define/constants.dart';
 import 'package:web_app/src/navigation/history/router_history.dart';
 import 'package:web_app/src/navigation/transition/fade_page_transitions_builder.dart';
@@ -51,7 +52,8 @@ class MyApp extends StatelessWidget {
       rootRoute,
     ],
     onException: (BuildContext ctx, GoRouterState state, GoRouter router) {
-      router.go(RouteDefine.notFound, extra: state.uri.toString());
+      print("------------page notFound: ${state.uri.toString()}");
+      router.go("/${RouteDefine.notFound}", extra: state.uri.toString());
     },
   );
 
