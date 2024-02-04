@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
 import 'package:web_app/src/app/app.dart';
+import 'package:web_app/src/define/constants.dart';
 import 'package:web_app/src/navigation/widget/menu_meta.dart';
 import 'package:web_app/src/route/route_define.dart';
 
@@ -12,6 +12,7 @@ class AppNavigationRail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 170,
+      color: secondaryColor,
       child: SideMenu(),
     );
   }

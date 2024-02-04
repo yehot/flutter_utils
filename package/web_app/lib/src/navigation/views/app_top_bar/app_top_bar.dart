@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:web_app/src/navigation/views/app_top_bar/route_back_indicator.dart';
+
+import 'router_indicator.dart';
 
 // app 主面板顶部 app bar
 class AppTopBar extends StatelessWidget {
@@ -6,9 +9,16 @@ class AppTopBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue,
-      height: 50,
+    return SizedBox(
+      height: 46,
+      child: Row(
+        children: [
+          const SizedBox(width: 16),
+          // const RouteBackIndicator(),
+          const RouterIndicator(),
+
+        ],
+      ),
     );
   }
 }
