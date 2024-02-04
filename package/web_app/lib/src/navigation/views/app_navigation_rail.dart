@@ -47,8 +47,8 @@ class _SideMenuState extends State<SideMenu> {
           title: e.label,
           svgSrc: e.icon,
           press: () {
-            print("----------- ${e.path}");
-            app.push(context, e.path);
+            // Feature: 1、页面主布局，左侧固定导航，右侧 push 切换页面
+            app.go(context, e.path);
           },
         )).toList(),
       ],

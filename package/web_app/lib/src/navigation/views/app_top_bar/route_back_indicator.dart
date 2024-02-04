@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+// 在一级页面进行 push 时，用于 返回上一级页面
 class RouteBackIndicator extends StatefulWidget {
   const RouteBackIndicator({super.key});
 

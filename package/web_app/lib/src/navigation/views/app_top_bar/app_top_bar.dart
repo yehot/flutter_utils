@@ -14,7 +14,7 @@ class AppTopBar extends StatelessWidget {
       child: Row(
         children: [
           const SizedBox(width: 16),
-          // const RouteBackIndicator(),
+          const RouteBackIndicator(),
           const RouterIndicator(),
 
         ],

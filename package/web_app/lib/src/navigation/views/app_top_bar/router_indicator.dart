@@ -54,8 +54,7 @@ class _RouterIndicatorState extends State<RouterIndicator> {
     setState(() {});
   }
 
-  List<BreadcrumbItem> pathToBreadcrumbItems(
-    BuildContext context, String path) {
+  List<BreadcrumbItem> pathToBreadcrumbItems(BuildContext context, String path) {
     Uri uri = Uri.parse(path);
     List<BreadcrumbItem> result = [];
     String to = '';
