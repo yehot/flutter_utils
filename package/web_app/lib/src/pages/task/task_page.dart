@@ -33,7 +33,10 @@ class _TaskPageState extends State<TaskPage> {
                   width: 60,
                   height: 60,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8)
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(
+                      color: Colors.white,
+                    )
                   ),
                   child: Text(
                     '$index',

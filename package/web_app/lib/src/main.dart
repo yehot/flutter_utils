@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Admin Panel', // 浏览器 tab 标题
         routerConfig: _router,
         debugShowCheckedModeBanner: false,
-        theme: ThemeData.dark().copyWith(
+        theme: ThemeData().copyWith(
           pageTransitionsTheme: PageTransitionsTheme(
             builders: {
               TargetPlatform.android: ZoomPageTransitionsBuilder(),
@@ -39,8 +39,8 @@ class MyApp extends StatelessWidget {
               TargetPlatform.linux: FadePageTransitionsBuilder(),
             }
           ),
-          scaffoldBackgroundColor: bgColor,
-          canvasColor: secondaryColor,
+          scaffoldBackgroundColor: bgGrayColor,
+          // canvasColor: secondaryColor,
         ),
       ),
     );
