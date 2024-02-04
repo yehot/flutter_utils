@@ -7,6 +7,7 @@ class TaskPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey,
       body: Center(
         child: Text(
           RouteDefine.task,
