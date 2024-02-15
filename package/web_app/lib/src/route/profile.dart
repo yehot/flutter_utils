@@ -7,6 +7,19 @@ import 'package:web_app/src/pages/profile/profile_settings.dart';
 import 'package:web_app/src/pages/profile/profile_sub_page.dart';
 import 'package:web_app/src/route/route_define.dart';
 
+// 二级页面：profile
+abstract class ProfileRouteDefine {
+  static String settings = "settings";
+  static String sub = "sub";
+}
+
+// ProfileRouteDefine.sub 对应的二级菜单
+Map<String, String> profileNameMap = {
+  'personal': '个人中心',
+  'user': '用户管理',
+  'role': '角色管理',
+  'menu': '菜单管理',
+};
 
 final RouteBase profileRouters = ShellRoute(
   // profile route 也是一个嵌套路由，和 appRoute 一样

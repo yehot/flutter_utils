@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:web_app/src/app/app.dart';
+import 'package:web_app/src/route/profile.dart';
 import 'package:web_app/src/route/route_define.dart';
 
 
@@ -90,12 +91,6 @@ class ProfileRailPanel extends StatelessWidget {
   }
 }
 
-Map<String, String> profileNameMap = {
-  'insertion': '个人中心',
-  'bubble': '用户管理',
-  'cocktail': '角色管理',
-  'menu': '菜单管理',
-};
 
 
 class SortSelectorPanel extends StatelessWidget {

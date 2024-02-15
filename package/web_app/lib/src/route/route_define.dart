@@ -19,22 +19,18 @@ abstract class RouteDefine {
   static String settings = "settings";
 }
 
-// 二级页面：profile
-abstract class ProfileRouteDefine {
-  static String settings = "settings";
-  static String sub = "sub";
-}
 
-Map<String, String> kRouteLabelMap = {
-  '': '',
-  '/profile': '我的',
-  '/settings': '系统设置',
-};
+
+// Map<String, String> kRouteLabelMap = {
+//   '': '',
+//   '/profile': '我的',
+//   '/settings': '系统设置',
+// };
 
 
 String calcRouteName(BuildContext context, String path) {
-  String? result = kRouteLabelMap[path];
-  if (result != null) return result;
+  // String? result = kRouteLabelMap[path];
+  // if (result != null) return result;
   return path;
   return '未知路由';
 }
