@@ -48,6 +48,8 @@ class _SideMenuState extends State<SideMenu> {
           svgSrc: e.icon,
           press: () {
             // Feature: 1、页面主布局，左侧固定导航，右侧 push 切换页面
+
+            // 一级菜单的路由切换：
             app.go(context, e.path);
           },
         )).toList(),

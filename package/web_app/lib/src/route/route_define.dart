@@ -4,6 +4,7 @@
 // （只暴露 lib 需要对外暴露的 page）
 import 'package:flutter/material.dart';
 
+// 一级页面
 abstract class RouteDefine {
   static String root = "/";
   static String login = "login";
@@ -16,6 +17,12 @@ abstract class RouteDefine {
   static String notification = "notification";
   static String profile = "profile";
   static String settings = "settings";
+}
+
+// 二级页面：profile
+abstract class ProfileRouteDefine {
+  static String settings = "settings";
+  static String sub = "sub";
 }
 
 Map<String, String> kRouteLabelMap = {

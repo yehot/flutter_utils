@@ -8,8 +8,8 @@ class App {
     GoRouter.of(context).push("/$path");
   }
 
-  void go(BuildContext context, String path) {
+  void go(BuildContext context, String path, {Object? extra}) {
     // TODO: router 的 go 和 push 区别 ？？
-    GoRouter.of(context).go("/$path");
+    GoRouter.of(context).go("/$path", extra: extra);
   }
 }

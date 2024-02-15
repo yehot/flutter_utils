@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'views/app_navigation_rail.dart';
 import 'views/app_top_bar/app_top_bar.dart';
 
-// app 页面左侧导航
+// app 主页面导航：
+//  左侧一级菜单固定、右侧页面点击菜单后 route 切换
 class AppNavigation extends StatefulWidget {
   final Widget child;
 
