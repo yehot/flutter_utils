@@ -8,6 +8,7 @@ import 'package:web_app/src/pages/profile/profile_page.dart';
 import 'package:web_app/src/pages/settings/settings_page.dart';
 import 'package:web_app/src/pages/task/task_page.dart';
 import 'package:web_app/src/route/home.dart';
+import 'package:web_app/src/route/profile.dart';
 import 'package:web_app/src/route/route_define.dart';
 import 'package:web_app/src/route/task.dart';
 
@@ -39,12 +40,13 @@ final RouteBase appRoute = ShellRoute(
         return NotificationPage();
       },
     ),
-    GoRoute(
-      path: RouteDefine.profile,
-      builder: (BuildContext context, GoRouterState state) {
-        return ProfilePage();
-      },
-    ),
+    profileRouters,
+    // GoRoute(
+    //   path: RouteDefine.profile,
+    //   builder: (BuildContext context, GoRouterState state) {
+    //     return ProfilePage();
+    //   },
+    // ),
     GoRoute(
       path: RouteDefine.settings,
       builder: (BuildContext context, GoRouterState state) {
