@@ -61,6 +61,16 @@ class MyApp extends StatelessWidget {
       print("------------page notFound: ${state.uri.toString()}");
       router.go("/${RouteDefine.notFound}", extra: state.uri.toString());
     },
+    // 登录重定向
+    redirect: _authRedirect,
   );
 
+}
+
+FutureOr<String?> _authRedirect(BuildContext context, GoRouterState state) async {
+  bool loggedIn = context.read<AuthScope>().status == AuthStatus.success;
+  if (!loggedIn) {
+    return "/${RouteDefine.login}";
+  }
+  return null;
 }
