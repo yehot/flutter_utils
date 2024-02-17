@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:web_app/src/route/profile.dart';
 import 'package:web_app/src/route/route_define.dart';
 
 class ProfileSettingsPage extends StatelessWidget {
@@ -13,7 +14,7 @@ class ProfileSettingsPage extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-          RouteDefine.profile,
+          "${RouteDefine.profile} - ${ProfileRouteDefine.settings}",
         ),
       ),
     );

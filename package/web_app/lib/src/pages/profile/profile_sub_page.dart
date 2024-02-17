@@ -12,10 +12,14 @@ class ProfileSubPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // var bg = Color((math.Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.grey.shade300,
       body: Center(
         child: Text(
-          title,
+          "$title - ${context.hashCode}",
+          style: TextStyle(
+            fontSize: 24,
+            // color: Colors.white,
+          ),
         ),
       ),
     );

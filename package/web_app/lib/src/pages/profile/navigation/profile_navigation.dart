@@ -31,13 +31,18 @@ class ProfileNavigation extends StatelessWidget {
   }
 }
 
-class ProfileRailPanel extends StatelessWidget {
+class ProfileRailPanel extends StatefulWidget {
   const ProfileRailPanel({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    // SortState state = SortStateScope.of(context);
+  State<ProfileRailPanel> createState() => _ProfileRailPanelState();
+}
 
+class _ProfileRailPanelState extends State<ProfileRailPanel> {
+  String _current = profileNameMap.values.first;
+
+  @override
+  Widget build(BuildContext context) {
     return Column(
       children: [
         Padding(
@@ -76,13 +81,19 @@ class ProfileRailPanel extends StatelessWidget {
         ),
         Expanded(
           child: SortSelectorPanel(
-            active: "state.config.name",
+            active: _current,
             options: profileNameMap.values.toList(),
             onSelected: (name) {
+              _current = name;
               // 通过路径传参
               // app.go(context, '/sort/player/$name');
               // 通过 extra 传参
-              app.go(context, '${RouteDefine.profile}/${ProfileRouteDefine.sub}', extra: {'title': name});
+              app.go(context,
+                '${RouteDefine.profile}/${ProfileRouteDefine.sub}',
+                extra: {
+                  'title': name,
+                }
+              );
             },
           ),
         ),
