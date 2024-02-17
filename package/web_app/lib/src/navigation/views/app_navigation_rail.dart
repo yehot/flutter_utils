@@ -29,7 +29,7 @@ class _SideMenuState extends State<SideMenu> {
 
   final List<MenuMeta> deskNavBarMenus = [
     MenuMeta(label: 'Dashboard', icon: "assets/icons/menu_dashboard.svg", path: RouteDefine.dashboard),
-    MenuMeta(label: 'Task', icon: "assets/icons/menu_task.svg", path: RouteDefine.task),
+    MenuMeta(label: 'Task', icon: "assets/icons/menu_task.svg", path: RouteDefine.color),
     MenuMeta(label: 'Notification', icon: "assets/icons/menu_notification.svg", path: RouteDefine.notification),
     MenuMeta(label: 'Profile', icon: "assets/icons/menu_profile.svg", path: RouteDefine.profile),
     MenuMeta(label: 'Settings', icon: "assets/icons/menu_setting.svg", path: RouteDefine.settings),

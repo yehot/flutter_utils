@@ -14,6 +14,7 @@ abstract class RouteDefine {
 
   static String dashboard = "dashboard";
   static String task = "task";
+  static String color = "color";
   static String notification = "notification";
   static String profile = "profile";
   static String settings = "settings";

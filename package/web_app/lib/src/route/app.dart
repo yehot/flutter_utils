@@ -7,6 +7,7 @@ import 'package:web_app/src/pages/notification/notification_page.dart';
 import 'package:web_app/src/pages/profile/profile_page.dart';
 import 'package:web_app/src/pages/settings/settings_page.dart';
 import 'package:web_app/src/pages/task/task_page.dart';
+import 'package:web_app/src/route/color.dart';
 import 'package:web_app/src/route/home.dart';
 import 'package:web_app/src/route/profile.dart';
 import 'package:web_app/src/route/route_define.dart';
@@ -33,7 +34,8 @@ final RouteBase appRoute = ShellRoute(
         return DashboardPage();
       },
     ),
-    taskRouters,
+    colorRouters,
+    // taskRouters,
     GoRoute(
       path: RouteDefine.notification,
       builder: (BuildContext context, GoRouterState state) {
