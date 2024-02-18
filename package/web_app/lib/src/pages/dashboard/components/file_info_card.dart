@@ -43,13 +43,15 @@ class FileInfoCard extends StatelessWidget {
               Icon(Icons.more_vert, color: Colors.white54)
             ],
           ),
-          Text(
-            info.title!,
-            maxLines: 1,
-            style: TextStyle(
-              color: Colors.white,
+          Flexible(
+            child: Text(
+              info.title!,
+              maxLines: 1,
+              style: TextStyle(
+                color: Colors.white,
+              ),
+              overflow: TextOverflow.ellipsis,
             ),
-            overflow: TextOverflow.ellipsis,
           ),
           ProgressLine(
             color: info.color,
@@ -65,12 +67,15 @@ class FileInfoCard extends StatelessWidget {
                     .bodySmall!
                     .copyWith(color: Colors.white70),
               ),
-              Text(
-                info.totalStorage!,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodySmall!
-                    .copyWith(color: Colors.white),
+              Flexible(
+                child: Text(
+                  info.totalStorage!,
+                  maxLines: 1,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodySmall!
+                      .copyWith(color: Colors.white),
+                ),
               ),
             ],
           )
