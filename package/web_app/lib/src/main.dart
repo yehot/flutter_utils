@@ -10,10 +10,12 @@ import 'package:web_app/src/navigation/history/router_history.dart';
 import 'package:web_app/src/navigation/transition/fade_page_transitions_builder.dart';
 import 'package:web_app/src/route/root.dart';
 import 'package:web_app/src/route/route_define.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 
 
 void run_app() {
   WidgetsFlutterBinding.ensureInitialized();
+  usePathUrlStrategy();
   GoRouter.optionURLReflectsImperativeAPIs = true;
   runApp(MyApp());
 }
